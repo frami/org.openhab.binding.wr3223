@@ -17,6 +17,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import static java.lang.String.format;
+
 /**
  * Base implementation for the connector to a wr3223 device.
  *
@@ -126,18 +128,22 @@ public abstract class AbstractWR3223Connector {
                 if (command.name().equals(toString(answer, 1, 2))) {
                     return toString(answer, 3, answer.length - 2);
                 } else {
-                    logger.error("Wrong command received. Expected {} but got {}.", command.name(),
+                    String error = format("Wrong command received. Expected %s but got %s.", command.name(),
                             toString(answer, 1, 2));
+                    logger.error(error);
+                    throw new IOException(error);
                 }
             } else {
-                logger.error("Checksum error. Expected {} but got {}.", chkSum,
+                String error = format("Checksum error. Expected %s but got %s.", chkSum,
                         buildCheckSum(answer, 1, answer.length - 1));
+                logger.error(error);
+                throw new IOException(error);
             }
         } else {
-            logger.error("Start/end of the controller answer is wrong.");
+            String error = "Start/end of the controller answer is wrong.";
+            logger.error(error);
+            throw new IOException(error);
         }
-        return null;
-
     }
 
     public boolean write(int addr, WR3223Commands command, String data) throws IOException {
