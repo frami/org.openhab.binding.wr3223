@@ -23,7 +23,7 @@ public class WR3223Configuration {
      * the refresh interval which is used to poll values from the WR3223
      * server (optional, defaults to 15s)
      */
-    public long refreshInterval;
+    public int refreshInterval = 15;
 
     /**
      * Host if connection over IP is used.
@@ -44,4 +44,10 @@ public class WR3223Configuration {
      * Controller address.
      */
     public int controllerAddr = 1;
+
+    @Override
+    public String toString() {
+        return "WR3223Configuration{" + "refreshInterval=" + refreshInterval + ", host='" + host + '\'' + ", port="
+                + port + ", serialPort='" + serialPort + '\'' + ", controllerAddr=" + controllerAddr + '}';
+    }
 }

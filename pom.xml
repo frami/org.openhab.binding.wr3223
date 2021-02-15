@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>org.openhab.addons.bundles</groupId>
     <artifactId>org.openhab.addons.reactor.bundles</artifactId>
-    <version>2.5.8-SNAPSHOT</version>
+    <version>3.0.1</version>
   </parent>
 
   <artifactId>org.openhab.binding.wr3223</artifactId>
 
   <name>openHAB Add-ons :: Bundles :: WR3223 Binding</name>
+  <build>
+    <plugins>
 
+      <plugin>
+        <groupId>org.commonjava.maven.plugins</groupId>
+        <artifactId>directory-maven-plugin</artifactId>
+        <version>0.3.1</version>
+        <executions>
+          <execution>
+            <id>directories</id>
+            <phase>none</phase>
+            <goals>
+              <goal>directory-of</goal>
+            </goals>
+            <configuration>
+              <property>basedirRoot</property>
+              <project>
+                <groupId>org.openhab.addons</groupId>
+                <artifactId>org.openhab.addons.reactor</artifactId>
+              </project>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <repositories>
+    <repository>
+      <id>openhab</id>
+      <url>https://dl.bintray.com/openhab/mvn/</url>
+    </repository>
+  </repositories>
 </project>

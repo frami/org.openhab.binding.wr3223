@@ -139,7 +139,6 @@ public enum WR3223CommandType {
             channelId = "additionalHeaterOpen";
             wr3223Command = WR3223Commands.ZH;
         }
-
     },
 
     /** (de: Zusatzheizung ein/ausschalten */
@@ -148,7 +147,6 @@ public enum WR3223CommandType {
             channelId = "additionalHeaterActivate";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Netzrelais Bypass) */
@@ -533,7 +531,6 @@ public enum WR3223CommandType {
             channelId = "evuBlockade";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Störung vorhanden */
@@ -542,7 +539,6 @@ public enum WR3223CommandType {
             channelId = "malfunction";
             wr3223Command = null;
         }
-
     },
 
     /** (de: kurzsch.TS */
@@ -551,7 +547,6 @@ public enum WR3223CommandType {
             channelId = "errorTempSensorShort";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Offset error */
@@ -560,7 +555,6 @@ public enum WR3223CommandType {
             channelId = "errorOffset";
             wr3223Command = null;
         }
-
     },
 
     /** (de: unterbr.TS */
@@ -569,7 +563,6 @@ public enum WR3223CommandType {
             channelId = "errorTempSensorInterupt";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Hochdruckfehler */
@@ -578,7 +571,6 @@ public enum WR3223CommandType {
             channelId = "errorHighPressure";
             wr3223Command = null;
         }
-
     },
 
     /** (de: error sys ram */
@@ -587,7 +579,6 @@ public enum WR3223CommandType {
             channelId = "errorSysRam";
             wr3223Command = null;
         }
-
     },
 
     /** (de: error sys rom */
@@ -596,7 +587,6 @@ public enum WR3223CommandType {
             channelId = "errorSysRom";
             wr3223Command = null;
         }
-
     },
 
     /** (de: error sys ee */
@@ -605,7 +595,6 @@ public enum WR3223CommandType {
             channelId = "errorSysEe";
             wr3223Command = null;
         }
-
     },
 
     /** (de: error sys io */
@@ -614,7 +603,6 @@ public enum WR3223CommandType {
             channelId = "errorSysIo";
             wr3223Command = null;
         }
-
     },
 
     /** (de: error sys 67 ad */
@@ -623,7 +611,6 @@ public enum WR3223CommandType {
             channelId = "errorSys67Ad";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Zuluft fehlt */
@@ -632,7 +619,6 @@ public enum WR3223CommandType {
             channelId = "errorSupplyAir";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Abluft fehlt */
@@ -641,7 +627,6 @@ public enum WR3223CommandType {
             channelId = "errorOutgoingAir";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Kondensationsfehler */
@@ -650,7 +635,6 @@ public enum WR3223CommandType {
             channelId = "errorCondenser";
             wr3223Command = null;
         }
-
     },
 
     /** (de: Vorheizfehler */
@@ -659,7 +643,6 @@ public enum WR3223CommandType {
             channelId = "errorPreheating";
             wr3223Command = null;
         }
-
     };
 
     String channelId;
@@ -676,5 +659,4 @@ public enum WR3223CommandType {
     public static Optional<WR3223CommandType> getByChannelId(String channelId) {
         return Arrays.stream(values()).filter(val -> val.getChannelId().equals(channelId)).findFirst();
     }
-
 }

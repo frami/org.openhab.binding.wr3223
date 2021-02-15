@@ -115,6 +115,5 @@ final class StatusValueHolder {
         heatPumpOnStatus = (value & FLAG_HEAT_PUMP_STATUS) == FLAG_HEAT_PUMP_STATUS ? true : false;
         additionalHeatingOnStatus = (value & FLAG_ADDITIONAL_HEATER_STATUS) == FLAG_ADDITIONAL_HEATER_STATUS ? true
                 : false;
-
     }
 }
