@@ -4,7 +4,8 @@
 	xsi:schemaLocation="https://openhab.org/schemas/binding/v1.0.0 https://openhab.org/schemas/binding-1.0.0.xsd">
 
 	<name>WR3223 Binding</name>
-	<description>The WR3223 binding can read several measurements and the current state of the ventilation system. It can also adjust the fan speed, operation mode and the target temperature.</description>
+	<description>The WR3223 binding can read several measurements and the current state of the ventilation system. It can
+		also adjust the fan speed, operation mode and the target temperature.</description>
 	<author>Michael Fraefel</author>
 
 </binding:binding>

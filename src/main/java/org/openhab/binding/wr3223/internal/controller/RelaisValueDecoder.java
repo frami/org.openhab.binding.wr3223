@@ -172,5 +172,4 @@ final class RelaisValueDecoder {
     public boolean isPreHeaterRadiatorActive() {
         return preHeaterRadiatorActive;
     }
-
 }

@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.net.Socket;
 
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.smarthome.core.thing.ThingStatus;
-import org.eclipse.smarthome.core.thing.ThingStatusDetail;
+import org.openhab.core.thing.ThingStatus;
+import org.openhab.core.thing.ThingStatusDetail;
 
 /**
  * Connector implementation for a TCP connection to WR3223.
@@ -36,7 +36,7 @@ public class TcpWR3223Connector extends AbstractWR3223Connector {
     public @NonNull ConnectResult connect(String host, int port) {
         try {
             socket = new Socket(host, port);
-            socket.setSoTimeout(5000);
+            socket.setSoTimeout(10000);
             connect(new DataInputStream(socket.getInputStream()), new DataOutputStream(socket.getOutputStream()));
         } catch (IOException e) {
             return new ConnectResult(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR, "I/O error!");
@@ -51,5 +51,4 @@ public class TcpWR3223Connector extends AbstractWR3223Connector {
             socket.close();
         }
     }
-
 }

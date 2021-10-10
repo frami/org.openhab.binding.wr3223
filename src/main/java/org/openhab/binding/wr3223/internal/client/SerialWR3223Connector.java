@@ -13,13 +13,9 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.smarthome.core.thing.ThingStatus;
-import org.eclipse.smarthome.core.thing.ThingStatusDetail;
-import org.eclipse.smarthome.io.transport.serial.PortInUseException;
-import org.eclipse.smarthome.io.transport.serial.SerialPort;
-import org.eclipse.smarthome.io.transport.serial.SerialPortIdentifier;
-import org.eclipse.smarthome.io.transport.serial.SerialPortManager;
-import org.eclipse.smarthome.io.transport.serial.UnsupportedCommOperationException;
+import org.openhab.core.io.transport.serial.*;
+import org.openhab.core.thing.ThingStatus;
+import org.openhab.core.thing.ThingStatusDetail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -50,7 +46,7 @@ public class SerialWR3223Connector extends AbstractWR3223Connector {
 
         // initialize serial port
         try {
-            serialPort = portId.open(thingUid, 2000);
+            serialPort = portId.open(thingUid, 5000);
 
             // set port parameters
             try {
@@ -62,7 +58,7 @@ public class SerialWR3223Connector extends AbstractWR3223Connector {
 
             }
             try {
-                serialPort.enableReceiveTimeout(2000);
+                serialPort.enableReceiveTimeout(5000);
             } catch (UnsupportedCommOperationException ex) {
                 logger.warn("Error by adding receive timeout.", ex);
             }
@@ -78,7 +74,6 @@ public class SerialWR3223Connector extends AbstractWR3223Connector {
             return new ConnectResult(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR,
                     "Port is in use!");
         }
-
     }
 
     @Override
@@ -89,5 +84,4 @@ public class SerialWR3223Connector extends AbstractWR3223Connector {
             serialPort = null;
         }
     }
-
 }

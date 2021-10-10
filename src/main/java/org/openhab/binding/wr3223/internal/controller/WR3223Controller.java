@@ -13,21 +13,21 @@ import java.util.Set;
 
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.Nullable;
-import org.eclipse.smarthome.core.library.types.DecimalType;
-import org.eclipse.smarthome.core.library.types.OnOffType;
-import org.eclipse.smarthome.core.library.types.OpenClosedType;
-import org.eclipse.smarthome.core.library.types.QuantityType;
-import org.eclipse.smarthome.core.thing.ChannelUID;
-import org.eclipse.smarthome.core.thing.ThingStatus;
-import org.eclipse.smarthome.core.thing.ThingStatusDetail;
-import org.eclipse.smarthome.core.types.Command;
-import org.eclipse.smarthome.io.transport.serial.SerialPortManager;
 import org.openhab.binding.wr3223.internal.WR3223Configuration;
 import org.openhab.binding.wr3223.internal.client.AbstractWR3223Connector;
 import org.openhab.binding.wr3223.internal.client.ConnectResult;
 import org.openhab.binding.wr3223.internal.client.SerialWR3223Connector;
 import org.openhab.binding.wr3223.internal.client.TcpWR3223Connector;
 import org.openhab.binding.wr3223.internal.client.WR3223Commands;
+import org.openhab.core.io.transport.serial.SerialPortManager;
+import org.openhab.core.library.types.DecimalType;
+import org.openhab.core.library.types.OnOffType;
+import org.openhab.core.library.types.OpenClosedType;
+import org.openhab.core.library.types.QuantityType;
+import org.openhab.core.thing.ChannelUID;
+import org.openhab.core.thing.ThingStatus;
+import org.openhab.core.thing.ThingStatusDetail;
+import org.openhab.core.types.Command;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -40,7 +40,6 @@ public class WR3223Controller implements Runnable, Closeable {
         boolean isLinked(@NonNull WR3223CommandType wr3223CommandType);
 
         void updateStatus(@NonNull ThingStatus status, @NonNull ThingStatusDetail statusDetail, String description);
-
     }
 
     private static final WR3223CommandType[] READ_COMMANDS = { WR3223CommandType.TEMPERATURE_EVAPORATOR,
@@ -299,7 +298,6 @@ public class WR3223Controller implements Runnable, Closeable {
             // Store the value update for the next communication with wr3223
             updateMap.put(commandType.get(), value);
         }
-
     }
 
     private void initConnection() {
@@ -411,5 +409,4 @@ public class WR3223Controller implements Runnable, Closeable {
             thingHandler.publishValueToBoundChannel(wr3223CommandType, value);
         }
     }
-
 }

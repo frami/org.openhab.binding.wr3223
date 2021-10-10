@@ -36,7 +36,6 @@ final class EvuBlockadeHandler {
         }
 
         return handler;
-
     }
 
     /**

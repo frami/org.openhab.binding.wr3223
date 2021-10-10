@@ -13,7 +13,7 @@
 package org.openhab.binding.wr3223.internal;
 
 import org.eclipse.jdt.annotation.NonNullByDefault;
-import org.eclipse.smarthome.core.thing.ThingTypeUID;
+import org.openhab.core.thing.ThingTypeUID;
 
 /**
  * The {@link WR3223BindingConstants} class defines common constants, which are
