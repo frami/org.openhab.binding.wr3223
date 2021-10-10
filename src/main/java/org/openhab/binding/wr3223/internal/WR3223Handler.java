@@ -18,21 +18,21 @@ import java.util.concurrent.TimeUnit;
 import org.eclipse.jdt.annotation.NonNull;
 import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.eclipse.jdt.annotation.Nullable;
-import org.eclipse.smarthome.core.library.types.DecimalType;
-import org.eclipse.smarthome.core.library.types.OnOffType;
-import org.eclipse.smarthome.core.library.types.OpenClosedType;
-import org.eclipse.smarthome.core.thing.Channel;
-import org.eclipse.smarthome.core.thing.ChannelUID;
-import org.eclipse.smarthome.core.thing.Thing;
-import org.eclipse.smarthome.core.thing.ThingStatus;
-import org.eclipse.smarthome.core.thing.ThingStatusDetail;
-import org.eclipse.smarthome.core.thing.binding.BaseThingHandler;
-import org.eclipse.smarthome.core.types.Command;
-import org.eclipse.smarthome.core.types.RefreshType;
-import org.eclipse.smarthome.core.types.State;
-import org.eclipse.smarthome.io.transport.serial.SerialPortManager;
 import org.openhab.binding.wr3223.internal.controller.WR3223CommandType;
 import org.openhab.binding.wr3223.internal.controller.WR3223Controller;
+import org.openhab.core.io.transport.serial.SerialPortManager;
+import org.openhab.core.library.types.DecimalType;
+import org.openhab.core.library.types.OnOffType;
+import org.openhab.core.library.types.OpenClosedType;
+import org.openhab.core.thing.Channel;
+import org.openhab.core.thing.ChannelUID;
+import org.openhab.core.thing.Thing;
+import org.openhab.core.thing.ThingStatus;
+import org.openhab.core.thing.ThingStatusDetail;
+import org.openhab.core.thing.binding.BaseThingHandler;
+import org.openhab.core.types.Command;
+import org.openhab.core.types.RefreshType;
+import org.openhab.core.types.State;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -82,6 +82,7 @@ public class WR3223Handler extends BaseThingHandler implements WR3223Controller.
         updateStatus(ThingStatus.UNKNOWN);
 
         config = getConfigAs(WR3223Configuration.class);
+        logger.info(config.toString());
         wr3223Controller = new WR3223Controller(config, serialPortManager, getThing().getUID().getAsString(), this);
         pollingJob = scheduler.scheduleWithFixedDelay(wr3223Controller, 0L, config.refreshInterval, TimeUnit.SECONDS);
     }
@@ -181,5 +182,4 @@ public class WR3223Handler extends BaseThingHandler implements WR3223Controller.
         }
         return state;
     }
-
 }

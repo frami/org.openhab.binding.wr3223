@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.net.Socket;
 
 import org.eclipse.jdt.annotation.NonNull;
-import org.eclipse.smarthome.core.thing.ThingStatus;
-import org.eclipse.smarthome.core.thing.ThingStatusDetail;
+import org.openhab.core.thing.ThingStatus;
+import org.openhab.core.thing.ThingStatusDetail;
 
 /**
  * Connector implementation for a TCP connection to WR3223.
@@ -51,5 +51,4 @@ public class TcpWR3223Connector extends AbstractWR3223Connector {
             socket.close();
         }
     }
-
 }

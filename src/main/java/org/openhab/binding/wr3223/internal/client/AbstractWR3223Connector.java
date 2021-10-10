@@ -8,6 +8,8 @@
  */
 package org.openhab.binding.wr3223.internal.client;
 
+import static java.lang.String.format;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -16,8 +18,6 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import static java.lang.String.format;
 
 /**
  * Base implementation for the connector to a wr3223 device.
@@ -190,7 +190,6 @@ public abstract class AbstractWR3223Connector {
             logger.error("Timeout. No answer for command {} with data {}.", command.name(), data);
         }
         return false;
-
     }
 
     /**
@@ -332,5 +331,4 @@ public abstract class AbstractWR3223Connector {
         sb.append("]");
         return sb.toString();
     }
-
 }

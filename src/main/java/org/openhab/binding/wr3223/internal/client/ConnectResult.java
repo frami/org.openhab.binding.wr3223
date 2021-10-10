@@ -1,8 +1,8 @@
 package org.openhab.binding.wr3223.internal.client;
 
 import org.eclipse.jdt.annotation.Nullable;
-import org.eclipse.smarthome.core.thing.ThingStatus;
-import org.eclipse.smarthome.core.thing.ThingStatusDetail;
+import org.openhab.core.thing.ThingStatus;
+import org.openhab.core.thing.ThingStatusDetail;
 
 public class ConnectResult {
 
@@ -32,5 +32,4 @@ public class ConnectResult {
     public String getDescription() {
         return description;
     }
-
 }

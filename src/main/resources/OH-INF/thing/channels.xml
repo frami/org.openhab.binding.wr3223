@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="wr3223"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<channel-type id="temperatureEvaporator">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature evaporator</label>
+		<description>Temperature evaporator</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="temperatureCondenser">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature condenser</label>
+		<description>Temperature condenser</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="temperatureOutside">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature outside</label>
+		<description>Temperature outside</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="temperatureOutgoingAir">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature outgoing air</label>
+		<description>Temperature outgoing air</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="temperatureAfterHeatExchanger">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature after heat exchanger</label>
+		<description>Temperature after heat exchanger</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="temperatureSupplyAir">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature supply air</label>
+		<description>Temperature supply air</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="temperatureAfterBrinePreheating">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature after brine preheating</label>
+		<description>Temperature after brine preheating</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="temperatureAfterPreheating">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature after preheating</label>
+		<description>Temperature after preheating</description>
+		<state readOnly="true" pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="rotationSpeedSupplyAirMotor">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Rotation speed supply air motor</label>
+		<description>Rotation speed supply air motor</description>
+		<state readOnly="true" pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="rotationSpeedExhaustAirMotor">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Rotation speed exhaust air motor</label>
+		<description>Rotation speed exhaust air motor</description>
+		<state readOnly="true" pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="bypass">
+		<item-type>Contact</item-type>
+		<label>Bypass</label>
+		<description>Bypass</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="compressor">
+		<item-type>Contact</item-type>
+		<label>Compressor</label>
+		<description>Compressor</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="additionalHeaterRelais">
+		<item-type>Contact</item-type>
+		<label>Additional heater relais</label>
+		<description>Additional heater relais</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="additionalHeaterStatus">
+		<item-type>Contact</item-type>
+		<label>Additional heater status</label>
+		<description>Additional heater status</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="additionalHeaterOpen">
+		<item-type>Switch</item-type>
+		<label>Additional heater open</label>
+		<description>Additional heater open</description>
+		<state pattern="%s"/>
+	</channel-type>
+	<channel-type id="additionalHeaterActivate">
+		<item-type>Switch</item-type>
+		<label>Additional heater activate</label>
+		<description>Additional heater activate</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="bypassRelay">
+		<item-type>Contact</item-type>
+		<label>Bypass relay</label>
+		<description>Bypass relay</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="preheatingRadiatorActive">
+		<item-type>Contact</item-type>
+		<label>Preheating radiator active</label>
+		<description>Preheating radiator active</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="controlDeviceActive">
+		<item-type>Contact</item-type>
+		<label>Control device active</label>
+		<description>Control device active</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="earthHeatExchanger">
+		<item-type>Contact</item-type>
+		<label>Earth heat exchanger</label>
+		<description>Earth heat exchanger</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="magnetValve">
+		<item-type>Contact</item-type>
+		<label>Magnet valve</label>
+		<description>Magnet valve</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="openhabInterfaceActive">
+		<item-type>Contact</item-type>
+		<label>Openhab interface active</label>
+		<description>Openhab interface active</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="preheatingRadiator">
+		<item-type>Contact</item-type>
+		<label>Preheating radiator</label>
+		<description>Preheating radiator</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="warmWaterPostHeater">
+		<item-type>Contact</item-type>
+		<label>Warm water post heater</label>
+		<description>Warm water post heater</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="ventilationLevelAvailable">
+		<item-type>Contact</item-type>
+		<label>Ventilation level available</label>
+		<description>Ventilation level available</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="ventilationLevel">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Ventilation level</label>
+		<description>Ventilation level</description>
+		<state readOnly="true" pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="operationMode">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Operation mode</label>
+		<description>Operation mode</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="coolingMode">
+		<item-type>Switch</item-type>
+		<label>Cooling mode</label>
+		<description>Cooling mode</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="temperatureSupplyAirTarget">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature supply air target</label>
+		<description>Temperature supply air target</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="heatFeedbackRate">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Heat feedback rate</label>
+		<description>Heat feedback rate</description>
+		<state readOnly="true" pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="speedDeviationMaxLevel1">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Speed deviation max level 1</label>
+		<description>Speed deviation max level 1</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="speedDeviationMaxLevel2">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Speed deviation max level 2</label>
+		<description>Speed deviation max level 2</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="speedDeviationMaxLevel3">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Speed deviation max level 3</label>
+		<description>Speed deviation max level 3</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="speedIncreaseEarthHeatExchangerLevel1">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Speed increase earth heat exchanger level 1</label>
+		<description>Speed increase earth heat exchanger level 1</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="speedIncreaseEarthHeatExchangerLevel2">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Speed increase earth heat exchanger level 2</label>
+		<description>Speed increase earth heat exchanger level 2</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="speedIncreaseEarthHeatExchangerLevel3">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Speed increase earth heat exchanger level 3</label>
+		<description>Speed increase earth heat exchanger level 3</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="airExchangeDecreaseOutsideTemperature">
+		<item-type>Number:Temperature</item-type>
+		<label>Air exchange decrease outside temperature</label>
+		<description>Air exchange decrease outside temperature</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="ventilationSpeedLevel1">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Ventilation speed level 1</label>
+		<description>Ventilation speed level 1</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="ventilationSpeedLevel2">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Ventilation speed level 2</label>
+		<description>Ventilation speed level 2</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="ventilationSpeedLevel3">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Ventilation speed level 3</label>
+		<description>Ventilation speed level 3</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="summerEarthHeatExchangerActivationTemperature">
+		<item-type>Number:Temperature</item-type>
+		<label>Summer earth heat exchanger activation temperature</label>
+		<description>Summer earth heat exchanger activation temperature</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="winterEarthHeatExchangerActivationTemperature">
+		<item-type>Number:Temperature</item-type>
+		<label>Winter earth heat exchanger activation temperature</label>
+		<description>Winter earth heat exchanger activation temperature</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="defrostingStartTemperature">
+		<item-type>Number:Temperature</item-type>
+		<label>Defrosting start temperature</label>
+		<description>Defrosting start temperature</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="defrostingEndTemperature">
+		<item-type>Number:Temperature</item-type>
+		<label>Defrosting end temperature</label>
+		<description>Defrosting end temperature</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="defrostingVentilationLevel">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Defrosting ventilation level</label>
+		<description>Defrosting ventilation level</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="defrostingHoldOffTime">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Defrosting hold off time</label>
+		<description>Defrosting hold off time</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="defrostingOvertravelTime">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Defrosting overtravel time</label>
+		<description>Defrosting overtravel time</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="defrostingHeatFeedbackRate">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Defrosting heat feedback rate</label>
+		<description>Defrosting heat feedback rate</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="solarMax">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Solar max</label>
+		<description>Solar max</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="solarUsage">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Solar usage</label>
+		<description>Solar usage</description>
+		<state readOnly="true" pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="deltaTOff">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Delta t off</label>
+		<description>Delta t off</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="deltaTOn">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Delta t on</label>
+		<description>Delta t on</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="temperatureCondenserMax">
+		<item-type>Number:Temperature</item-type>
+		<label>Temperature condenser max</label>
+		<description>Temperature condenser max</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="idleTimePressureReduction">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Idle time pressure reduction</label>
+		<description>Idle time pressure reduction</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="supportFanLevel1EarthHeatExchanger">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Support fan level 1 earth heat exchanger</label>
+		<description>Support fan level 1 earth heat exchanger</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="supportFanLevel2EarthHeatExchanger">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Support fan level 2 earth heat exchanger</label>
+		<description>Support fan level 2 earth heat exchanger</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="supportFanLevel3EarthHeatExchanger">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Support fan level 3 earth heat exchanger</label>
+		<description>Support fan level 3 earth heat exchanger</description>
+		<state pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="controlVoltageOutgoingAir">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Control voltage outgoing air</label>
+		<description>Control voltage outgoing air</description>
+		<state readOnly="true" pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="controlVoltageSupplyAir">
+		<item-type>Number:Dimensionless</item-type>
+		<label>Control voltage supply air</label>
+		<description>Control voltage supply air</description>
+		<state readOnly="true" pattern="%.1f"/>
+	</channel-type>
+	<channel-type id="warmWaterTargetTemperature">
+		<item-type>Number:Temperature</item-type>
+		<label>Warm water target temperature</label>
+		<description>Warm water target temperature</description>
+		<state pattern="%.1f %unit%"/>
+	</channel-type>
+	<channel-type id="heatPumpStatus">
+		<item-type>Contact</item-type>
+		<label>Heat pump status</label>
+		<description>Heat pump status</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="heatPumpOpen">
+		<item-type>Switch</item-type>
+		<label>Heat pump open</label>
+		<description>Heat pump open</description>
+		<state pattern="%s"/>
+	</channel-type>
+	<channel-type id="heatPumpActivate">
+		<item-type>Switch</item-type>
+		<label>Heat pump activate</label>
+		<description>Heat pump activate</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="evuBlockade">
+		<item-type>Contact</item-type>
+		<label>Evu blockade</label>
+		<description>Evu blockade</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="malfunction">
+		<item-type>Contact</item-type>
+		<label>Malfunction</label>
+		<description>Malfunction</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorTempSensorShort">
+		<item-type>Contact</item-type>
+		<label>Error temp sensor short</label>
+		<description>Error temp sensor short</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorOffset">
+		<item-type>Contact</item-type>
+		<label>Error offset</label>
+		<description>Error offset</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorTempSensorInterupt">
+		<item-type>Contact</item-type>
+		<label>Error temp sensor interupt</label>
+		<description>Error temp sensor interupt</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorHighPressure">
+		<item-type>Contact</item-type>
+		<label>Error high pressure</label>
+		<description>Error high pressure</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorSysRam">
+		<item-type>Contact</item-type>
+		<label>Error sys ram</label>
+		<description>Error sys ram</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorSysRom">
+		<item-type>Contact</item-type>
+		<label>Error sys rom</label>
+		<description>Error sys rom</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorSysEe">
+		<item-type>Contact</item-type>
+		<label>Error sys ee</label>
+		<description>Error sys ee</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorSysIo">
+		<item-type>Contact</item-type>
+		<label>Error sys io</label>
+		<description>Error sys io</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorSys67Ad">
+		<item-type>Contact</item-type>
+		<label>Error sys 67 ad</label>
+		<description>Error sys 67 ad</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorSupplyAir">
+		<item-type>Contact</item-type>
+		<label>Error supply air</label>
+		<description>Error supply air</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorOutgoingAir">
+		<item-type>Contact</item-type>
+		<label>Error outgoing air</label>
+		<description>Error outgoing air</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorCondenser">
+		<item-type>Contact</item-type>
+		<label>Error condenser</label>
+		<description>Error condenser</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+	<channel-type id="errorPreheating">
+		<item-type>Contact</item-type>
+		<label>Error preheating</label>
+		<description>Error preheating</description>
+		<state readOnly="true" pattern="%s"/>
+	</channel-type>
+</thing:thing-descriptions>
